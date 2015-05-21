@@ -14,6 +14,7 @@
 		0CE010F71B0C506400D596A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE010F61B0C506400D596A8 /* Images.xcassets */; };
 		0CE010FA1B0C506400D596A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE010F81B0C506400D596A8 /* LaunchScreen.xib */; };
 		0CE011061B0C506400D596A8 /* chapterhouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE011051B0C506400D596A8 /* chapterhouseTests.swift */; };
+		0CE011101B0C532F00D596A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0CE010FF1B0C506400D596A8 /* chapterhouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chapterhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE011041B0C506400D596A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE011051B0C506400D596A8 /* chapterhouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapterhouseTests.swift; sourceTree = "<group>"; };
+		0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				0CE010F61B0C506400D596A8 /* Images.xcassets */,
 				0CE010F81B0C506400D596A8 /* LaunchScreen.xib */,
 				0CE010EB1B0C506400D596A8 /* Supporting Files */,
+				0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */,
 			);
 			path = chapterhouse;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CE011101B0C532F00D596A8 /* LoginViewController.swift in Sources */,
 				0CE010F21B0C506400D596A8 /* DetailViewController.swift in Sources */,
 				0CE010F01B0C506400D596A8 /* MasterViewController.swift in Sources */,
 				0CE010EE1B0C506400D596A8 /* AppDelegate.swift in Sources */,
