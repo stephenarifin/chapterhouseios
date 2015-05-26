@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="I2t-Ov-9wT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Master-->
+        <!--Members-->
         <scene sceneID="cUi-kZ-frf">
             <objects>
-                <navigationController title="Master" id="rS3-R9-Ivy" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="membersList" title="Members" id="rS3-R9-Ivy" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="yXu-0R-QUA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-148" y="64"/>
         </scene>
-        <!--Login View Controller-->
+        <!--loginViewController-->
         <scene sceneID="Y0E-Lv-DKM">
             <objects>
-                <viewController id="I2t-Ov-9wT" customClass="LoginViewController" customModule="chapterhouse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="loginViewController" id="I2t-Ov-9wT" customClass="LoginViewController" customModule="chapterhouse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qqh-72-jIe"/>
                         <viewControllerLayoutGuide type="bottom" id="5zF-J6-5Gc"/>
@@ -56,16 +56,21 @@
                                     <action selector="login:" destination="I2t-Ov-9wT" eventType="touchUpInside" id="Jdx-Nh-8Zt"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="iGh-6t-Abg">
+                                <rect key="frame" x="290" y="328" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mcu-38-P2k" firstAttribute="leading" secondItem="9ec-hR-PCS" secondAttribute="leading" id="7rL-s7-zbb"/>
+                            <constraint firstItem="iGh-6t-Abg" firstAttribute="centerX" secondItem="mcu-38-P2k" secondAttribute="centerX" id="Ao8-hv-9pV"/>
                             <constraint firstItem="Q74-WZ-7Ld" firstAttribute="centerX" secondItem="8Eo-sC-4Cp" secondAttribute="centerX" id="GB0-7I-lgT"/>
                             <constraint firstItem="jW6-ud-DUW" firstAttribute="trailing" secondItem="Q74-WZ-7Ld" secondAttribute="trailing" id="OAi-6T-VJw"/>
                             <constraint firstItem="mcu-38-P2k" firstAttribute="top" secondItem="9ec-hR-PCS" secondAttribute="bottom" constant="8" symbolic="YES" id="Pc1-gO-h0R"/>
                             <constraint firstItem="9ec-hR-PCS" firstAttribute="leading" secondItem="jW6-ud-DUW" secondAttribute="leading" id="QhI-Gr-V2D"/>
                             <constraint firstItem="9ec-hR-PCS" firstAttribute="trailing" secondItem="jW6-ud-DUW" secondAttribute="trailing" id="Tbl-7d-vhP"/>
                             <constraint firstItem="9ec-hR-PCS" firstAttribute="top" secondItem="jW6-ud-DUW" secondAttribute="bottom" constant="8" symbolic="YES" id="a8U-0U-fjj"/>
+                            <constraint firstItem="iGh-6t-Abg" firstAttribute="top" secondItem="mcu-38-P2k" secondAttribute="bottom" constant="8" symbolic="YES" id="exr-WD-eCd"/>
                             <constraint firstItem="mcu-38-P2k" firstAttribute="trailing" secondItem="9ec-hR-PCS" secondAttribute="trailing" id="fsf-dn-3zu"/>
                             <constraint firstItem="jW6-ud-DUW" firstAttribute="leading" secondItem="Q74-WZ-7Ld" secondAttribute="leading" id="h7y-Y1-SAF"/>
                             <constraint firstItem="Q74-WZ-7Ld" firstAttribute="top" secondItem="qqh-72-jIe" secondAttribute="bottom" constant="141" id="nax-QC-eJv"/>
@@ -73,18 +78,19 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loginActivityIndicator" destination="iGh-6t-Abg" id="LOj-QE-GEQ"/>
                         <outlet property="loginEmail" destination="jW6-ud-DUW" id="uzv-63-KrY"/>
                         <outlet property="loginPassword" destination="9ec-hR-PCS" id="T2Y-Bu-5WB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t9i-k2-ScG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-158" y="734"/>
+            <point key="canvasLocation" x="-710" y="794"/>
         </scene>
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
             <objects>
-                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MasterViewController" customModule="chapterhouse" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Master" id="pGg-6v-bdr" customClass="MemberListViewController" customModule="chapterhouse" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="mLL-gJ-YKr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +124,7 @@
                             <outlet property="delegate" destination="pGg-6v-bdr" id="Y6K-Cp-Qkv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Master" id="tQt-TN-PWz"/>
+                    <navigationItem key="navigationItem" title="Members" id="tQt-TN-PWz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Cn-md-YlS" sceneMemberID="firstResponder"/>
             </objects>

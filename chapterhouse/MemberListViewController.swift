@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MemberListViewController: UITableViewController {
 
     var objects = [AnyObject]()
 
@@ -24,6 +24,8 @@ class MasterViewController: UITableViewController {
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

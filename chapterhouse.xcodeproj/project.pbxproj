@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0CE010EE1B0C506400D596A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010ED1B0C506400D596A8 /* AppDelegate.swift */; };
-		0CE010F01B0C506400D596A8 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010EF1B0C506400D596A8 /* MasterViewController.swift */; };
+		0CE010F01B0C506400D596A8 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */; };
 		0CE010F21B0C506400D596A8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010F11B0C506400D596A8 /* DetailViewController.swift */; };
 		0CE010F51B0C506400D596A8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CE010F31B0C506400D596A8 /* Main.storyboard */; };
 		0CE010F71B0C506400D596A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE010F61B0C506400D596A8 /* Images.xcassets */; };
@@ -31,7 +31,7 @@
 		0CE010E81B0C506400D596A8 /* chapterhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chapterhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE010EC1B0C506400D596A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE010ED1B0C506400D596A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0CE010EF1B0C506400D596A8 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
 		0CE010F11B0C506400D596A8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		0CE010F41B0C506400D596A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CE010F61B0C506400D596A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				0CE010ED1B0C506400D596A8 /* AppDelegate.swift */,
-				0CE010EF1B0C506400D596A8 /* MasterViewController.swift */,
+				0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */,
 				0CE010F11B0C506400D596A8 /* DetailViewController.swift */,
 				0CE010F31B0C506400D596A8 /* Main.storyboard */,
 				0CE010F61B0C506400D596A8 /* Images.xcassets */,
@@ -220,7 +220,7 @@
 			files = (
 				0CE011101B0C532F00D596A8 /* LoginViewController.swift in Sources */,
 				0CE010F21B0C506400D596A8 /* DetailViewController.swift in Sources */,
-				0CE010F01B0C506400D596A8 /* MasterViewController.swift in Sources */,
+				0CE010F01B0C506400D596A8 /* MemberListViewController.swift in Sources */,
 				0CE010EE1B0C506400D596A8 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -417,6 +417,7 @@
 				0CE0110B1B0C506400D596A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0CE0110C1B0C506400D596A8 /* Build configuration list for PBXNativeTarget "chapterhouseTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +426,7 @@
 				0CE0110E1B0C506400D596A8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -12,29 +12,37 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var loginEmail: UITextField!
     @IBOutlet weak var loginPassword: UITextField!
+    @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     
     @IBAction func login(sender: UIButton) {
         
         let email = "stephen.arifin@gmail.com"
         let password = "testpassword"
         
-        let loginString = "user[email]=stephen.arifin@gmail.com&user[password]=testpassword"
+        loginActivityIndicator.startAnimating()
+        
+        loginPost(email, password: password)
+        
+    }
+    
+    func loginPost(email: NSString, password: NSString) -> Void {
+        
+        let loginString = "user[email]=\(email)&user[password]=\(password)"
         
         var request = NSMutableURLRequest(URL: NSURL(string: "http://chapter-house-test.herokuapp.com/users/sign_in")!)
-
+        
         request.HTTPMethod = "POST"
         request.HTTPBody = loginString.dataUsingEncoding(NSUTF8StringEncoding)
         
-        let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            data, response, error in
-            
+        let task: Void = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: {(data: NSData!, response: NSURLResponse!, error: NSError!) -> Void in
+
             if error != nil
             {
                 println("error=\(error)")
                 return
             }
             
-            var cookies = NSHTTPCookieStorage.sharedHTTPCookieStorage()
+            var cookies:[NSHTTPCookie] = NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies as! [NSHTTPCookie]
             
             // You can print out response object
             println("response = \(response)")
@@ -43,7 +51,7 @@ class LoginViewController: UIViewController {
             let responseString = NSString(data: data, encoding: NSUTF8StringEncoding)
             println("responseString = \(responseString)")
             
-            println("COOKIES" + cookies.description)
+            println("COOKIES:  \(cookies.count)")
             
             //Let's convert response sent from a server side script to a NSDictionary object:
             
@@ -55,12 +63,24 @@ class LoginViewController: UIViewController {
                 var firstNameValue = parseJSON["firstName"] as? String
                 println("firstNameValue: \(firstNameValue)")
             }
-        }
+            
+            self.loginActivityIndicator.stopAnimating()
+            
+            // Need to find a better way to do this
+            if cookies.count != 0 {
+                println("Leaving login screen...")
+                self.leaveLoginScreen()
+            }
+            
+            }).resume()
         
-        
-        
-        task.resume()
-        
+
+    }
+    
+    func leaveLoginScreen() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("membersList") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
