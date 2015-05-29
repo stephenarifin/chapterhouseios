@@ -12,7 +12,8 @@ class MemberListViewController: UITableViewController {
 
     var memberList: [Member] = []
 
-
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -20,15 +21,52 @@ class MemberListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.tableView
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
         let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
+        
+        // Navigation menu code
+        /* hide default navigation bar button item
+        self.navigationItem.leftBarButtonItem = nil;
+        self.navigationItem.hidesBackButton = true;
+        
+        let menuButton: UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
+        menuButton.frame = CGRectMake(0, 0, 30, 30)
+        menuButton.setImage(UIImage(named:"Menu.png"), forState: UIControlState.Normal)
+        menuButton.addTarget(self, action: "revealToggle:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        var menuBarButtonItem: UIBarButtonItem = UIBarButtonItem(customView: menuButton)
+        self.navigationItem.setLeftBarButtonItem(menuBarButtonItem, animated: false)*/
+        
+//        let menuButton = UIBarButtonItem(barButtonSystemItem: <#UIBarButtonSystemItem#>, target: <#AnyObject?#>, action: <#Selector#>)
+//        var menuButton = self.navigationItem.leftBarButtonItem
+        
+//        menuButton.target = self.revealViewController()
+//        menuButton.action = "revealToggle:"
+//        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        
+        if self.revealViewController() != nil {
+            println("If block inside")
+//            menuButton.target = self.revealViewController()
+//            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
         
         makeGetRequests()
         self.tableView.reloadData()
     
     }
+    
+/*    @IBAction func showMenu(sender: AnyObject) {
+//        self.revealViewController()
+        println("Show Menu Now")
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewControllerWithIdentifier("menu") as! UIViewController
+        self.presentViewController(vc, animated: true, completion: nil)
+    } */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -129,6 +167,8 @@ class MemberListViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     } */
+    
+
 
 
 }

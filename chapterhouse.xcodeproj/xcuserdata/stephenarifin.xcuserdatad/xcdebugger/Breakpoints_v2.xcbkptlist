@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "chapterhouse/MemberListViewController.swift"
-            timestampString = "454475217.99769"
+            timestampString = "454568518.323806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "populateMembers(_:)"
             landmarkType = "5">
          </BreakpointContent>
