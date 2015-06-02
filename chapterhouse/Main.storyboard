@@ -239,30 +239,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lDJ-mB-bRe" customClass="CVCalendarMenuView" customModule="chapterhouse" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="600" height="53"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKA-hA-mMM" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="64" width="600" height="55"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAP-0s-EKL" customClass="CVCalendarView" customModule="chapterhouse" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="135" width="600" height="336"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-Jd-FPI" customClass="CVCalendarView" customModule="CVCalendar">
+                                <rect key="frame" x="0.0" y="127" width="600" height="473"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="zAP-0s-EKL" firstAttribute="leading" secondItem="gFZ-gG-j2f" secondAttribute="leading" id="7WC-pz-WQ1"/>
-                            <constraint firstItem="lDJ-mB-bRe" firstAttribute="leading" secondItem="zAP-0s-EKL" secondAttribute="leading" id="G0Q-RU-OXb"/>
-                            <constraint firstAttribute="trailing" secondItem="zAP-0s-EKL" secondAttribute="trailing" id="a4w-f9-xiW"/>
-                            <constraint firstItem="lDJ-mB-bRe" firstAttribute="top" secondItem="k4H-Dh-Ith" secondAttribute="bottom" id="eJU-b2-Xjw"/>
-                            <constraint firstItem="lDJ-mB-bRe" firstAttribute="trailing" secondItem="zAP-0s-EKL" secondAttribute="trailing" id="hPt-ad-lKz"/>
-                            <constraint firstItem="zAP-0s-EKL" firstAttribute="top" secondItem="lDJ-mB-bRe" secondAttribute="bottom" constant="18" id="igA-nI-vnv"/>
-                            <constraint firstItem="zAP-0s-EKL" firstAttribute="top" secondItem="gFZ-gG-j2f" secondAttribute="top" constant="135" id="ouf-3a-4BL"/>
-                            <constraint firstItem="wof-Wv-dQC" firstAttribute="top" secondItem="zAP-0s-EKL" secondAttribute="bottom" constant="129" id="wIj-oT-csV"/>
+                            <constraint firstAttribute="trailing" secondItem="YY9-Jd-FPI" secondAttribute="trailing" id="2eh-Nf-fCY"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="top" secondItem="gFZ-gG-j2f" secondAttribute="top" constant="127" id="CdM-pF-lnH"/>
+                            <constraint firstItem="zKA-hA-mMM" firstAttribute="top" secondItem="k4H-Dh-Ith" secondAttribute="bottom" id="MZD-m2-wUR"/>
+                            <constraint firstItem="zKA-hA-mMM" firstAttribute="trailing" secondItem="YY9-Jd-FPI" secondAttribute="trailing" id="QEI-S9-9gR"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="top" secondItem="zKA-hA-mMM" secondAttribute="bottom" constant="8" symbolic="YES" id="bmd-jT-YjF"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="bottom" secondItem="wof-Wv-dQC" secondAttribute="top" id="eYE-mi-yma"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="leading" secondItem="gFZ-gG-j2f" secondAttribute="leading" id="o0I-6j-4sn"/>
+                            <constraint firstItem="zKA-hA-mMM" firstAttribute="leading" secondItem="YY9-Jd-FPI" secondAttribute="leading" id="pKS-jf-VNK"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calanderView" destination="zAP-0s-EKL" id="b1h-pN-x9B"/>
-                        <outlet property="menuView" destination="lDJ-mB-bRe" id="h92-vS-SZl"/>
+                        <outlet property="calendarView" destination="YY9-Jd-FPI" id="gcR-CF-u1S"/>
+                        <outlet property="menuView" destination="zKA-hA-mMM" id="n4A-Eg-boG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umu-hv-N40" userLabel="First Responder" sceneMemberID="firstResponder"/>
