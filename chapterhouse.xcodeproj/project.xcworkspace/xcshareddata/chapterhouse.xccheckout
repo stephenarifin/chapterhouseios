@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>F0FEDA14-34F2-42CD-AAFC-77F06CAF7D12</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>chapterhouse</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>91CC5A6455FC5DFA77D5DF7A4E228AB92E938454</key>
 		<string>https://github.com/stephenarifin/chapterhouseios.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>chapterhouse.xcodeproj/project.xcworkspace</string>
+	<string>chapterhouse.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>91CC5A6455FC5DFA77D5DF7A4E228AB92E938454</key>

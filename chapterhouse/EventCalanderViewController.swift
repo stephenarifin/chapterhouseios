@@ -6,14 +6,13 @@
 //  Copyright (c) 2015 Chapter House. All rights reserved.
 //
 
-import CVCalendar
+// import CVCalendar
 
 
 class EventCalanderViewController: UIViewController {
     
-    @IBOutlet weak var menuView: CVCalendarMenuView!
     @IBOutlet weak var calendarView: CVCalendarView!
-    @IBOutlet weak var calendarMonthView: CVCalendarMonthView!
+    @IBOutlet weak var menuView: CVCalendarMenuView!
     
     @IBOutlet weak var monthLabel: UILabel!
     
@@ -25,17 +24,24 @@ class EventCalanderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        monthLabel.text = CVDate(date: NSDate()).getDescription()
+        monthLabel.text = CVDate(date: NSDate()).globalDescription
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.calendarView.commitCalendarViewUpdate()
-        self.menuView.commitMenuViewUpdate()
+//        calendarView.commitCalendarViewUpdate()
+//       menuView.commitMenuViewUpdate()
         
         makeGetRequests()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        calendarView.commitCalendarViewUpdate()
+        menuView.commitMenuViewUpdate()
     }
     
     func makeGetRequests() -> Void {
@@ -63,6 +69,7 @@ class EventCalanderViewController: UIViewController {
         return eventArray
     }
 }
+
 
 extension EventCalanderViewController: CVCalendarViewDelegate
 {
@@ -113,13 +120,13 @@ extension EventCalanderViewController: CVCalendarViewDelegate
         return false
     }
     
-    func presentationMode() -> CVCalendarViewMode {
+    func presentationMode() -> CalendarMode {
         return .MonthView
     }
     
-    //    func firstWeekday() -> Weekday {
-    //        return .Sunday
-    //    }
+        func firstWeekday() -> Weekday {
+            return .Sunday
+        }
     
     func shouldShowWeekdaysOut() -> Bool {
         return shouldShowDaysOut
@@ -131,12 +138,12 @@ extension EventCalanderViewController: CVCalendarViewDelegate
     }
     
     func presentedDateUpdated(date: CVDate) {
-        if monthLabel.text != date.getDescription() && self.animationFinished {
+        if monthLabel.text != date.globalDescription && self.animationFinished {
             let updatedMonthLabel = UILabel()
             updatedMonthLabel.textColor = monthLabel.textColor
             updatedMonthLabel.font = monthLabel.font
             updatedMonthLabel.textAlignment = .Center
-            updatedMonthLabel.text = date.getDescription()
+            updatedMonthLabel.text = date.globalDescription
             updatedMonthLabel.sizeToFit()
             updatedMonthLabel.alpha = 0
             updatedMonthLabel.center = self.monthLabel.center
@@ -287,7 +294,7 @@ extension EventCalanderViewController: CVCalendarViewDelegate {
     func dotMarker(shouldMoveOnHighlightingOnDayView dayView: CVCalendarDayView) -> Bool {
         return true
     }
-} */
+}
 
 // MARK: - CVCalendarViewAppearanceDelegate
 
@@ -300,6 +307,6 @@ extension EventCalanderViewController: CVCalendarViewAppearanceDelegate {
         return 2
     }
 }
-
+*/
 
 

@@ -1,6 +1,0 @@
-framework module Pods_chapterhouse {
-  umbrella header "Pods-chapterhouse-umbrella.h"
-
-  export *
-  module * { export * }
-}

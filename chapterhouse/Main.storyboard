@@ -240,7 +240,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKA-hA-mMM" customClass="CVCalendarMenuView" customModule="CVCalendar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKA-hA-mMM" customClass="CVCalendarMenuView" customModule="chapterhouse">
                                 <rect key="frame" x="0.0" y="123" width="603" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -254,12 +254,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-Jd-FPI" customClass="CVCalendarView" customModule="CVCalendar">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-Jd-FPI" customClass="CVCalendarView" customModule="chapterhouse">
                                 <rect key="frame" x="3" y="191" width="600" height="273"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="calendarAppearanceDelegate" destination="fhr-TV-cuH" id="2dp-xt-RQb"/>
-                                    <outlet property="calendarDelegate" destination="fhr-TV-cuH" id="ah0-4F-xn2"/>
+                                    <outlet property="calendarAppearanceDelegate" destination="fhr-TV-cuH" id="ajj-ah-Gky"/>
+                                    <outlet property="calendarDelegate" destination="fhr-TV-cuH" id="bld-bf-aWK"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -278,8 +278,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="calendarView" destination="YY9-Jd-FPI" id="gcR-CF-u1S"/>
-                        <outlet property="menuView" destination="zKA-hA-mMM" id="n4A-Eg-boG"/>
+                        <outlet property="calendarView" destination="YY9-Jd-FPI" id="X0v-q2-XON"/>
+                        <outlet property="menuView" destination="zKA-hA-mMM" id="jCc-aS-Nqb"/>
                         <outlet property="monthLabel" destination="CeV-8V-2iK" id="NtQ-zb-G6p"/>
                     </connections>
                 </viewController>
