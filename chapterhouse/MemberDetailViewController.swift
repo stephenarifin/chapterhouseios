@@ -8,23 +8,32 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class MemberDetailViewController: UIViewController {
 
-    @IBOutlet weak var detailDescriptionLabel: UILabel!
+    var member: Member?
+    
+    @IBOutlet weak var memberName: UILabel!
 
-
+    @IBOutlet weak var pageTitle: UINavigationItem!
+    
     var detailItem: AnyObject? {
         didSet {
             // Update the view.
             self.configureView()
         }
     }
-
+    
+    
     func configureView() {
         // Update the user interface for the detail item.
-        if let detail: AnyObject = self.detailItem {
-            if let label = self.detailDescriptionLabel {
-                label.text = detail.description
+        if let member: Member = self.member {
+            
+            if let title = self.pageTitle {
+                title.title = member.fullName
+            }
+            
+            if let label = self.memberName {
+                label.text = member.fullName
             }
         }
     }

@@ -23,8 +23,8 @@ class MemberListViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
 //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+//        self.navigationItem.rightBarButtonItem = addButton
         
         // Navigation menu code
         /* hide default navigation bar button item
@@ -82,7 +82,7 @@ class MemberListViewController: UITableViewController {
     
     func makeGetRequests() -> Void {
         
-        let membersUrl = NSURL(string: "http://chapter-house-test.herokuapp.com/users")
+        // let membersUrl = NSURL(string: "http://chapter-house-test.herokuapp.com/users")
         
         /*let task = NSURLSession.sharedSession().dataTaskWithURL(membersUrl!) {(data, response, error) in
             println(NSString(data: data, encoding: NSUTF8StringEncoding))
@@ -90,7 +90,7 @@ class MemberListViewController: UITableViewController {
         
         task.resume()*/
         
-        var parsedJSON = parseJSON(getJSON("http://chapter-house-test.herokuapp.com/users"))
+        var parsedJSON = HttpUtility.parseJSON(HttpUtility.getJSON("http://chapter-house-test.herokuapp.com/users"))
         memberList = populateMembers(parsedJSON) as! [Member]
         println(parsedJSON)
         
@@ -100,16 +100,6 @@ class MemberListViewController: UITableViewController {
             println("Members: " + member.fullName)
         }
 
-    }
-    
-    func getJSON(urlToRequest: String) -> NSData{
-        return NSData(contentsOfURL: NSURL(string: urlToRequest)!)!
-    }
-    
-    func parseJSON(inputData: NSData) -> NSArray{
-        var error: NSError?
-        var membersDictionaryArray: NSArray = NSJSONSerialization.JSONObjectWithData(inputData, options: NSJSONReadingOptions.MutableContainers, error: &error) as! NSArray
-        return membersDictionaryArray
     }
     
     func populateMembers(memberDictionaries: NSArray) -> NSArray{
@@ -124,15 +114,15 @@ class MemberListViewController: UITableViewController {
     }
 
     // MARK: - Segues
-/*
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "showDetail" {
+        if segue.identifier == "showMemberDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow() {
-                let object = objects[indexPath.row] as! NSDate
-            (segue.destinationViewController as! DetailViewController).detailItem = object
+                let memberSelected = memberList[indexPath.row] as Member
+            (segue.destinationViewController as! MemberDetailViewController).member = memberSelected
             }
         }
-    } */
+    } 
 
     // MARK: - Table View
 

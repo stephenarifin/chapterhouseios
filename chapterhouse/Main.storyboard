@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wte-My-wcb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Members-->
@@ -240,34 +241,51 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKA-hA-mMM" customClass="CVCalendarMenuView" customModule="CVCalendar">
-                                <rect key="frame" x="0.0" y="64" width="600" height="55"/>
+                                <rect key="frame" x="0.0" y="123" width="603" height="44"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January, 2015" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CeV-8V-2iK">
+                                <rect key="frame" x="184" y="75" width="233" height="38"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="38" id="0lN-zP-SG8"/>
+                                    <constraint firstAttribute="width" constant="233" id="uaa-FM-KR3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-Jd-FPI" customClass="CVCalendarView" customModule="CVCalendar">
-                                <rect key="frame" x="0.0" y="127" width="600" height="473"/>
+                                <rect key="frame" x="3" y="191" width="600" height="273"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="calendarAppearanceDelegate" destination="fhr-TV-cuH" id="2dp-xt-RQb"/>
+                                    <outlet property="calendarDelegate" destination="fhr-TV-cuH" id="ah0-4F-xn2"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="YY9-Jd-FPI" secondAttribute="trailing" id="2eh-Nf-fCY"/>
-                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="top" secondItem="gFZ-gG-j2f" secondAttribute="top" constant="127" id="CdM-pF-lnH"/>
-                            <constraint firstItem="zKA-hA-mMM" firstAttribute="top" secondItem="k4H-Dh-Ith" secondAttribute="bottom" id="MZD-m2-wUR"/>
-                            <constraint firstItem="zKA-hA-mMM" firstAttribute="trailing" secondItem="YY9-Jd-FPI" secondAttribute="trailing" id="QEI-S9-9gR"/>
-                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="top" secondItem="zKA-hA-mMM" secondAttribute="bottom" constant="8" symbolic="YES" id="bmd-jT-YjF"/>
-                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="bottom" secondItem="wof-Wv-dQC" secondAttribute="top" id="eYE-mi-yma"/>
-                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="leading" secondItem="gFZ-gG-j2f" secondAttribute="leading" id="o0I-6j-4sn"/>
-                            <constraint firstItem="zKA-hA-mMM" firstAttribute="leading" secondItem="YY9-Jd-FPI" secondAttribute="leading" id="pKS-jf-VNK"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="top" secondItem="zKA-hA-mMM" secondAttribute="bottom" constant="24" id="1fy-GY-0rY"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="top" secondItem="gFZ-gG-j2f" secondAttribute="top" constant="191" id="ENQ-f7-wNb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zKA-hA-mMM" secondAttribute="trailing" constant="-19" id="Gn4-xg-CmW"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="trailing" secondItem="zKA-hA-mMM" secondAttribute="trailing" id="JWi-Q3-qTE"/>
+                            <constraint firstItem="YY9-Jd-FPI" firstAttribute="leading" secondItem="gFZ-gG-j2f" secondAttribute="leadingMargin" constant="-13" id="QV1-Qy-b3Y"/>
+                            <constraint firstItem="zKA-hA-mMM" firstAttribute="top" secondItem="CeV-8V-2iK" secondAttribute="bottom" constant="10" id="VdI-Pn-pIC"/>
+                            <constraint firstItem="zKA-hA-mMM" firstAttribute="leading" secondItem="gFZ-gG-j2f" secondAttribute="leading" id="etS-XZ-K05"/>
+                            <constraint firstItem="CeV-8V-2iK" firstAttribute="centerX" secondItem="gFZ-gG-j2f" secondAttribute="centerX" id="kKj-VL-AfI"/>
+                            <constraint firstItem="wof-Wv-dQC" firstAttribute="top" secondItem="YY9-Jd-FPI" secondAttribute="bottom" constant="136" id="q1U-wK-5v4"/>
+                            <constraint firstItem="CeV-8V-2iK" firstAttribute="top" secondItem="k4H-Dh-Ith" secondAttribute="bottom" constant="11" id="qcY-3p-eSf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="calendarView" destination="YY9-Jd-FPI" id="gcR-CF-u1S"/>
                         <outlet property="menuView" destination="zKA-hA-mMM" id="n4A-Eg-boG"/>
+                        <outlet property="monthLabel" destination="CeV-8V-2iK" id="NtQ-zb-G6p"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umu-hv-N40" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="623" y="64"/>
+            <point key="canvasLocation" x="623" y="108"/>
         </scene>
         <!--Master-->
         <scene sceneID="VgW-fR-Quf">
@@ -296,7 +314,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Ah7-4n-0Wa" kind="show" identifier="showDetail" id="jUr-3t-vfg"/>
+                                    <segue destination="Ah7-4n-0Wa" kind="show" identifier="showMemberDetail" id="jUr-3t-vfg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -315,7 +333,7 @@
         <!--Detail-->
         <scene sceneID="Cn3-H9-jdl">
             <objects>
-                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="DetailViewController" customModule="chapterhouse" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Detail" id="Ah7-4n-0Wa" customClass="MemberDetailViewController" customModule="chapterhouse" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cIm-e0-J51"/>
                         <viewControllerLayoutGuide type="bottom" id="a0L-h9-sNL"/>
@@ -324,24 +342,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-5M-9Gs">
-                                <rect key="frame" x="20" y="292" width="560" height="17"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_profile_pic" translatesAutoresizingMaskIntoConstraints="NO" id="Hpa-fy-Hnz">
+                                <rect key="frame" x="222" y="72" width="156" height="188"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="156" id="h9r-2G-aAc"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rn9-X0-Y2G">
+                                <rect key="frame" x="279" y="268" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lei-5M-9Gs" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="20" symbolic="YES" id="62x-JV-TTJ"/>
-                            <constraint firstItem="Lei-5M-9Gs" firstAttribute="centerY" secondItem="MMQ-IT-qOo" secondAttribute="centerY" id="JzS-HC-Rnl"/>
-                            <constraint firstAttribute="trailing" secondItem="Lei-5M-9Gs" secondAttribute="trailing" constant="20" symbolic="YES" id="pXB-RP-Zz6"/>
+                            <constraint firstItem="Hpa-fy-Hnz" firstAttribute="centerX" secondItem="MMQ-IT-qOo" secondAttribute="centerX" id="Ioi-fh-0HX"/>
+                            <constraint firstItem="rn9-X0-Y2G" firstAttribute="centerX" secondItem="Hpa-fy-Hnz" secondAttribute="centerX" id="OEa-GH-nnG"/>
+                            <constraint firstItem="a0L-h9-sNL" firstAttribute="top" secondItem="Hpa-fy-Hnz" secondAttribute="bottom" constant="340" id="VRZ-si-Zwj"/>
+                            <constraint firstItem="rn9-X0-Y2G" firstAttribute="top" secondItem="Hpa-fy-Hnz" secondAttribute="bottom" constant="8" symbolic="YES" id="kuq-hB-e6Y"/>
+                            <constraint firstItem="Hpa-fy-Hnz" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="8" symbolic="YES" id="qt4-FE-Izf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
+                        <outlet property="memberName" destination="rn9-X0-Y2G" id="EIf-iQ-BN4"/>
+                        <outlet property="pageTitle" destination="cra-N8-TIN" id="0Oh-7t-Ryx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
@@ -349,6 +375,9 @@
             <point key="canvasLocation" x="1355" y="808"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="no_profile_pic" width="210" height="260"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="eN3-bH-ooO"/>
     </inferredMetricsTieBreakers>

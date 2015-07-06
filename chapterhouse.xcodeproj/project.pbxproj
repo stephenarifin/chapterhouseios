@@ -10,11 +10,12 @@
 		0CD9335E1B1C20E700EC9CEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CD9335D1B1C20E700EC9CEE /* Main.storyboard */; };
 		0CE010EE1B0C506400D596A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010ED1B0C506400D596A8 /* AppDelegate.swift */; };
 		0CE010F01B0C506400D596A8 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */; };
-		0CE010F21B0C506400D596A8 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010F11B0C506400D596A8 /* DetailViewController.swift */; };
+		0CE010F21B0C506400D596A8 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010F11B0C506400D596A8 /* MemberDetailViewController.swift */; };
 		0CE010F71B0C506400D596A8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CE010F61B0C506400D596A8 /* Images.xcassets */; };
 		0CE010FA1B0C506400D596A8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0CE010F81B0C506400D596A8 /* LaunchScreen.xib */; };
 		0CE011061B0C506400D596A8 /* chapterhouseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE011051B0C506400D596A8 /* chapterhouseTests.swift */; };
 		0CE011101B0C532F00D596A8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */; };
+		0CE6D8431B26A97E004E22BF /* HttpUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE6D8421B26A97E004E22BF /* HttpUtility.swift */; };
 		0CE933801B14344200CD1BF4 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9337F1B14344200CD1BF4 /* Member.swift */; };
 		0CE933851B16D31F00CD1BF4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE933841B16D31F00CD1BF4 /* SWRevealViewController.m */; };
 		0CE9338B1B18318000CD1BF4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9338A1B18318000CD1BF4 /* MenuViewController.swift */; };
@@ -41,6 +42,7 @@
 		0CEA54251B1D8360007D52C7 /* CVDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEA540F1B1D8360007D52C7 /* CVDate.swift */; };
 		0CEA54261B1D8360007D52C7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 0CEA54101B1D8360007D52C7 /* LICENSE */; };
 		0CEA54271B1D8360007D52C7 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 0CEA54111B1D8360007D52C7 /* README.md */; };
+		0CEA54291B201AB8007D52C7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEA54281B201AB8007D52C7 /* Event.swift */; };
 		A1083B1C6037AFC2315525B5 /* Pods_chapterhouse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 708B3069F033E411E4D7DB81 /* Pods_chapterhouse.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -60,13 +62,14 @@
 		0CE010EC1B0C506400D596A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE010ED1B0C506400D596A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberListViewController.swift; sourceTree = "<group>"; };
-		0CE010F11B0C506400D596A8 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		0CE010F11B0C506400D596A8 /* MemberDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberDetailViewController.swift; sourceTree = "<group>"; };
 		0CE010F61B0C506400D596A8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0CE010F91B0C506400D596A8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		0CE010FF1B0C506400D596A8 /* chapterhouseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = chapterhouseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE011041B0C506400D596A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE011051B0C506400D596A8 /* chapterhouseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chapterhouseTests.swift; sourceTree = "<group>"; };
 		0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0CE6D8421B26A97E004E22BF /* HttpUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpUtility.swift; sourceTree = "<group>"; };
 		0CE9337F1B14344200CD1BF4 /* Member.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		0CE933821B16D31E00CD1BF4 /* chapterhouse-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "chapterhouse-Bridging-Header.h"; sourceTree = "<group>"; };
 		0CE933831B16D31F00CD1BF4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 		0CEA540F1B1D8360007D52C7 /* CVDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVDate.swift; sourceTree = "<group>"; };
 		0CEA54101B1D8360007D52C7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		0CEA54111B1D8360007D52C7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		0CEA54281B201AB8007D52C7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		708B3069F033E411E4D7DB81 /* Pods_chapterhouse.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_chapterhouse.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A05382DA4959E5E2A51AE829 /* Pods-chapterhouse.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chapterhouse.release.xcconfig"; path = "Pods/Target Support Files/Pods-chapterhouse/Pods-chapterhouse.release.xcconfig"; sourceTree = "<group>"; };
 		E0435CEC399C8BD5F2BFAE51 /* Pods-chapterhouse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-chapterhouse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-chapterhouse/Pods-chapterhouse.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,12 +146,13 @@
 		0CE010EA1B0C506400D596A8 /* chapterhouse */ = {
 			isa = PBXGroup;
 			children = (
+				0CE6D8411B26A902004E22BF /* Utilities */,
 				0CEA53FA1B1D8360007D52C7 /* CVCalendar */,
 				0CE933811B16D2A400CD1BF4 /* SWRevealViewController */,
 				0CE9337E1B14340200CD1BF4 /* Model */,
 				0CE010ED1B0C506400D596A8 /* AppDelegate.swift */,
 				0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */,
-				0CE010F11B0C506400D596A8 /* DetailViewController.swift */,
+				0CE010F11B0C506400D596A8 /* MemberDetailViewController.swift */,
 				0CD9335D1B1C20E700EC9CEE /* Main.storyboard */,
 				0CE010F61B0C506400D596A8 /* Images.xcassets */,
 				0CE010F81B0C506400D596A8 /* LaunchScreen.xib */,
@@ -184,10 +189,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0CE6D8411B26A902004E22BF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				0CE6D8421B26A97E004E22BF /* HttpUtility.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
 		0CE9337E1B14340200CD1BF4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				0CE9337F1B14344200CD1BF4 /* Member.swift */,
+				0CEA54281B201AB8007D52C7 /* Event.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -410,11 +424,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				0CE011101B0C532F00D596A8 /* LoginViewController.swift in Sources */,
+				0CE6D8431B26A97E004E22BF /* HttpUtility.swift in Sources */,
 				0CEA54201B1D8360007D52C7 /* CVCalendarViewDelegate.swift in Sources */,
 				0CEA541E1B1D8360007D52C7 /* CVCalendarViewAppearance.swift in Sources */,
 				0CEA541F1B1D8360007D52C7 /* CVCalendarViewAppearanceDelegate.swift in Sources */,
+				0CEA54291B201AB8007D52C7 /* Event.swift in Sources */,
 				0CEA54131B1D8360007D52C7 /* CVCalendarContentViewController.swift in Sources */,
-				0CE010F21B0C506400D596A8 /* DetailViewController.swift in Sources */,
+				0CE010F21B0C506400D596A8 /* MemberDetailViewController.swift in Sources */,
 				0CEA54241B1D8360007D52C7 /* CVCircleView.swift in Sources */,
 				0CE933B61B183B8F00CD1BF4 /* EventCalanderViewController.swift in Sources */,
 				0CEA54221B1D8360007D52C7 /* CVCalendarWeekContentView.swift in Sources */,
