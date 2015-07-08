@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "chapterhouse.EventCalanderViewController.supplementaryView (chapterhouse.EventCalanderViewController)(shouldDisplayOnDayView : chapterhouse.CVCalendarDayView) -&gt; Swift.Bool:EventCalanderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "NSCalendar.currentCalendar().startOfDayForDate(event.start_date)">
+            </PersistentString>
+            <PersistentString
+               value = "NSCalendar.currentCalendar().startOfDayForDate(dayView.date.convertedDate()!)">
+            </PersistentString>
+            <PersistentString
+               value = "dayView.date.convertedDate()">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "chapterhouse.EventCalanderViewController.viewDidLayoutSubviews (chapterhouse.EventCalanderViewController)() -&gt; ():EventCalanderViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "eventList">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "chapterhouse.Event.init (chapterhouse.Event.Type)(dictionary : ObjectiveC.NSDictionary) -&gt; chapterhouse.Event:Event.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "start_date">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
