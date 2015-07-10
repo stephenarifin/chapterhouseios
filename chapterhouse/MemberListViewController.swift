@@ -82,14 +82,6 @@ class MemberListViewController: UITableViewController {
     
     func makeGetRequests() -> Void {
         
-        // let membersUrl = NSURL(string: "http://chapter-house-test.herokuapp.com/users")
-        
-        /*let task = NSURLSession.sharedSession().dataTaskWithURL(membersUrl!) {(data, response, error) in
-            println(NSString(data: data, encoding: NSUTF8StringEncoding))
-        }
-        
-        task.resume()*/
-        
         var parsedJSON = HttpUtility.parseJSON(HttpUtility.getJSON("http://chapter-house-test.herokuapp.com/users"))
         memberList = populateMembers(parsedJSON) as! [Member]
         println(parsedJSON)
@@ -136,7 +128,7 @@ class MemberListViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("MemberCell", forIndexPath: indexPath) as! UITableViewCell
 
         let member = memberList[indexPath.row] as Member
         cell.textLabel!.text = member.fullName

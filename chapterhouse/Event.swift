@@ -35,7 +35,7 @@ class Event {
         
     }
     
-    func convertStringToNSDate(date: String) -> NSDate {
+    private func convertStringToNSDate(date: String) -> NSDate {
 
         // Date formatter
         let dateFormatter = NSDateFormatter()

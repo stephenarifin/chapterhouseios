@@ -9,33 +9,43 @@
 // import CVCalendar
 
 
-class EventCalanderViewController: UIViewController {
+class EventCalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var calendarView: CVCalendarView!
     @IBOutlet weak var menuView: CVCalendarMenuView!
     
     @IBOutlet weak var monthLabel: UILabel!
     
+    @IBOutlet weak var eventTableView: UITableView!
+    
+    // Calendar variables
     var shouldShowDaysOut = true
     var animationFinished = true
     
-//    var eventList : [Event] = []
     var events = [NSDate: [Event]]()
+    
+    
+    // Event table view variables
+    let eventTextCellIdentifier = "EventTextCell"
+    
+    // Segue variables
+    let eventDetailSegueIdentifier = "showEventDetail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Update month title before the view loads
         monthLabel.text = CVDate(date: NSDate()).globalDescription
+        
+        // For EventTableView
+        eventTableView.delegate = self
+        eventTableView.dataSource = self
     }
     
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-//        calendarView.commitCalendarViewUpdate()
-//       menuView.commitMenuViewUpdate()
-        
-//        makeGetRequests()
+    
     }
     
     override func viewDidLayoutSubviews() {
@@ -45,8 +55,13 @@ class EventCalanderViewController: UIViewController {
         
         calendarView.commitCalendarViewUpdate()
         menuView.commitMenuViewUpdate()
+        
+        // Update event tableview for initial date
+        eventTableView.reloadData()
     }
     
+    
+    // Receive event information from back-end
     func makeGetRequests() -> Void {
         
         var parsedJSON = HttpUtility.parseJSON(HttpUtility.getJSON("http://chapter-house-test.herokuapp.com/events"))
@@ -83,10 +98,76 @@ class EventCalanderViewController: UIViewController {
         
         return eventArray
     }
+    
+    
+    
+    // Functions for EventTableView
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // Number of rows in each section
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    // Event content in each cell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier(eventTextCellIdentifier, forIndexPath: indexPath) as! UITableViewCell
+        
+        let row = indexPath.row
+        
+        // Get the events on the selected date
+        var selectedDate = calendarView.presentedDate.convertedDate()
+        
+        // If there are events on the selected day
+        if (events[selectedDate!] != nil) {
+            var eventArray: [Event] = events[selectedDate!]!
+            cell.textLabel!.text = eventArray[row].title
+            
+            // Enable user interaction
+            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+            cell.userInteractionEnabled = true
+            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+
+        }
+            
+        // If there are no events on the selected day
+        else {
+            cell.textLabel!.text = "No events"
+            
+            // Disable user interaction with the event row
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.userInteractionEnabled = false
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        
+        return cell
+    }
+    
+    
+    // MARK: - Navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        // Get the events on the selected date
+        var selectedDate = calendarView.presentedDate.convertedDate()
+        
+        if segue.identifier == eventDetailSegueIdentifier && events[selectedDate!] != nil {
+            if let destination = segue.destinationViewController as? EventDetailViewController {
+                if let eventIndex = eventTableView.indexPathForSelectedRow()?.row {
+                    var eventArray: [Event] = events[selectedDate!]!
+                    destination.event = eventArray[eventIndex]
+
+                }
+            }
+        }
+    }
+    
 }
 
 
-extension EventCalanderViewController: CVCalendarViewDelegate
+extension EventCalendarViewController: CVCalendarViewDelegate
 {
     func supplementaryView(viewOnDayView dayView: CVCalendarDayView) -> UIView
     {
@@ -143,7 +224,7 @@ extension EventCalanderViewController: CVCalendarViewDelegate
 }
 
 
-extension EventCalanderViewController: CVCalendarViewDelegate {
+extension EventCalendarViewController: CVCalendarViewDelegate {
     func presentationMode() -> CalendarMode {
         return .MonthView
     }
@@ -156,10 +237,11 @@ extension EventCalanderViewController: CVCalendarViewDelegate {
         return shouldShowDaysOut
     }
     
+    // When the presented date updates
     func didSelectDayView(dayView: CVCalendarDayView) {
         let date = dayView.date
         println("\(calendarView.presentedDate.commonDescription) is selected!")
-        println("\(dayView.date.convertedDate()?.description) is selected!")
+        eventTableView.reloadData()
     }
     
     func presentedDateUpdated(date: CVDate) {
@@ -233,7 +315,7 @@ extension EventCalanderViewController: CVCalendarViewDelegate {
 
 // MARK: - CVCalendarViewAppearanceDelegate
 
-extension EventCalanderViewController: CVCalendarViewAppearanceDelegate {
+extension EventCalendarViewController: CVCalendarViewAppearanceDelegate {
     func dayLabelPresentWeekdayInitallyBold() -> Bool {
         return false
     }
@@ -245,7 +327,7 @@ extension EventCalanderViewController: CVCalendarViewAppearanceDelegate {
 
 // MARK: - CVCalendarMenuViewDelegate
 
-extension EventCalanderViewController: CVCalendarMenuViewDelegate {
+extension EventCalendarViewController: CVCalendarMenuViewDelegate {
     // firstWeekday() has been already implemented.
 }
 

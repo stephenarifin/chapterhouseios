@@ -34,6 +34,10 @@
 		0CDB65091B4A06D400C6820A /* CVSelectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB64EF1B4A06D400C6820A /* CVSelectionType.swift */; };
 		0CDB650A1B4A06D400C6820A /* CVSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB64F01B4A06D400C6820A /* CVSet.swift */; };
 		0CDB650B1B4A06D400C6820A /* CVShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB64F11B4A06D400C6820A /* CVShape.swift */; };
+		0CDB650D1B4DDC9400C6820A /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB650C1B4DDC9400C6820A /* EventDetailViewController.swift */; };
+		0CDB65101B4F7F7500C6820A /* ChapterListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB650F1B4F7F7500C6820A /* ChapterListViewController.swift */; };
+		0CDB65121B4F810C00C6820A /* ChapterMeeting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB65111B4F810C00C6820A /* ChapterMeeting.swift */; };
+		0CDB65141B4F89ED00C6820A /* ChapterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CDB65131B4F89ED00C6820A /* ChapterDetailViewController.swift */; };
 		0CE010EE1B0C506400D596A8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010ED1B0C506400D596A8 /* AppDelegate.swift */; };
 		0CE010F01B0C506400D596A8 /* MemberListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */; };
 		0CE010F21B0C506400D596A8 /* MemberDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE010F11B0C506400D596A8 /* MemberDetailViewController.swift */; };
@@ -45,7 +49,7 @@
 		0CE933801B14344200CD1BF4 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9337F1B14344200CD1BF4 /* Member.swift */; };
 		0CE933851B16D31F00CD1BF4 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CE933841B16D31F00CD1BF4 /* SWRevealViewController.m */; };
 		0CE9338B1B18318000CD1BF4 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE9338A1B18318000CD1BF4 /* MenuViewController.swift */; };
-		0CE933B61B183B8F00CD1BF4 /* EventCalanderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE933B51B183B8F00CD1BF4 /* EventCalanderViewController.swift */; };
+		0CE933B61B183B8F00CD1BF4 /* EventCalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CE933B51B183B8F00CD1BF4 /* EventCalendarViewController.swift */; };
 		0CEA54291B201AB8007D52C7 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CEA54281B201AB8007D52C7 /* Event.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +91,10 @@
 		0CDB64EF1B4A06D400C6820A /* CVSelectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVSelectionType.swift; sourceTree = "<group>"; };
 		0CDB64F01B4A06D400C6820A /* CVSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVSet.swift; sourceTree = "<group>"; };
 		0CDB64F11B4A06D400C6820A /* CVShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CVShape.swift; sourceTree = "<group>"; };
+		0CDB650C1B4DDC9400C6820A /* EventDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		0CDB650F1B4F7F7500C6820A /* ChapterListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterListViewController.swift; sourceTree = "<group>"; };
+		0CDB65111B4F810C00C6820A /* ChapterMeeting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterMeeting.swift; sourceTree = "<group>"; };
+		0CDB65131B4F89ED00C6820A /* ChapterDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterDetailViewController.swift; sourceTree = "<group>"; };
 		0CE010E81B0C506400D596A8 /* chapterhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chapterhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CE010EC1B0C506400D596A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CE010ED1B0C506400D596A8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -104,7 +112,7 @@
 		0CE933831B16D31F00CD1BF4 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.h"; sourceTree = "<group>"; };
 		0CE933841B16D31F00CD1BF4 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = "../../../Downloads/SWRevealViewController-master/SWRevealViewController/SWRevealViewController.m"; sourceTree = "<group>"; };
 		0CE9338A1B18318000CD1BF4 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
-		0CE933B51B183B8F00CD1BF4 /* EventCalanderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCalanderViewController.swift; sourceTree = "<group>"; };
+		0CE933B51B183B8F00CD1BF4 /* EventCalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCalendarViewController.swift; sourceTree = "<group>"; };
 		0CEA54281B201AB8007D52C7 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +176,21 @@
 			path = "../../../Downloads/CVCalendar-develop 2/CVCalendar Demo/CVCalendar";
 			sourceTree = "<group>";
 		};
+		0CDB650E1B4DDDF100C6820A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */,
+				0CE9338A1B18318000CD1BF4 /* MenuViewController.swift */,
+				0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */,
+				0CE010F11B0C506400D596A8 /* MemberDetailViewController.swift */,
+				0CE933B51B183B8F00CD1BF4 /* EventCalendarViewController.swift */,
+				0CDB650C1B4DDC9400C6820A /* EventDetailViewController.swift */,
+				0CDB650F1B4F7F7500C6820A /* ChapterListViewController.swift */,
+				0CDB65131B4F89ED00C6820A /* ChapterDetailViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		0CE010DF1B0C506400D596A8 = {
 			isa = PBXGroup;
 			children = (
@@ -192,17 +215,13 @@
 				0CDB64D61B4A06AD00C6820A /* CVCalendar */,
 				0CE6D8411B26A902004E22BF /* Utilities */,
 				0CE933811B16D2A400CD1BF4 /* SWRevealViewController */,
-				0CE9337E1B14340200CD1BF4 /* Model */,
+				0CE9337E1B14340200CD1BF4 /* Models */,
+				0CDB650E1B4DDDF100C6820A /* View Controllers */,
 				0CE010ED1B0C506400D596A8 /* AppDelegate.swift */,
-				0CE010EF1B0C506400D596A8 /* MemberListViewController.swift */,
-				0CE010F11B0C506400D596A8 /* MemberDetailViewController.swift */,
 				0CD9335D1B1C20E700EC9CEE /* Main.storyboard */,
 				0CE010F61B0C506400D596A8 /* Images.xcassets */,
 				0CE010F81B0C506400D596A8 /* LaunchScreen.xib */,
 				0CE010EB1B0C506400D596A8 /* Supporting Files */,
-				0CE0110F1B0C532F00D596A8 /* LoginViewController.swift */,
-				0CE9338A1B18318000CD1BF4 /* MenuViewController.swift */,
-				0CE933B51B183B8F00CD1BF4 /* EventCalanderViewController.swift */,
 			);
 			path = chapterhouse;
 			sourceTree = "<group>";
@@ -240,13 +259,14 @@
 			name = Utilities;
 			sourceTree = "<group>";
 		};
-		0CE9337E1B14340200CD1BF4 /* Model */ = {
+		0CE9337E1B14340200CD1BF4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				0CE9337F1B14344200CD1BF4 /* Member.swift */,
 				0CEA54281B201AB8007D52C7 /* Event.swift */,
+				0CDB65111B4F810C00C6820A /* ChapterMeeting.swift */,
 			);
-			name = Model;
+			name = Models;
 			sourceTree = "<group>";
 		};
 		0CE933811B16D2A400CD1BF4 /* SWRevealViewController */ = {
@@ -374,6 +394,7 @@
 				0CDB64FF1B4A06D400C6820A /* CVCalendarViewAppearance.swift in Sources */,
 				0CEA54291B201AB8007D52C7 /* Event.swift in Sources */,
 				0CDB650B1B4A06D400C6820A /* CVShape.swift in Sources */,
+				0CDB65141B4F89ED00C6820A /* ChapterDetailViewController.swift in Sources */,
 				0CDB64F71B4A06D400C6820A /* CVCalendarMenuView.swift in Sources */,
 				0CDB65081B4A06D400C6820A /* CVScrollDirection.swift in Sources */,
 				0CDB65051B4A06D400C6820A /* CVCalendarWeekView.swift in Sources */,
@@ -384,15 +405,18 @@
 				0CDB64FC1B4A06D400C6820A /* CVCalendarView.swift in Sources */,
 				0CE010F21B0C506400D596A8 /* MemberDetailViewController.swift in Sources */,
 				0CDB64F91B4A06D400C6820A /* CVCalendarMonthContentViewController.swift in Sources */,
-				0CE933B61B183B8F00CD1BF4 /* EventCalanderViewController.swift in Sources */,
+				0CE933B61B183B8F00CD1BF4 /* EventCalendarViewController.swift in Sources */,
 				0CE010F01B0C506400D596A8 /* MemberListViewController.swift in Sources */,
 				0CE9338B1B18318000CD1BF4 /* MenuViewController.swift in Sources */,
 				0CE010EE1B0C506400D596A8 /* AppDelegate.swift in Sources */,
 				0CDB65011B4A06D400C6820A /* CVCalendarViewDelegate.swift in Sources */,
+				0CDB650D1B4DDC9400C6820A /* EventDetailViewController.swift in Sources */,
 				0CDB64FD1B4A06D400C6820A /* CVCalendarViewAnimator.swift in Sources */,
+				0CDB65101B4F7F7500C6820A /* ChapterListViewController.swift in Sources */,
 				0CDB64F51B4A06D400C6820A /* CVCalendarDayViewControlCoordinator.swift in Sources */,
 				0CDB64FE1B4A06D400C6820A /* CVCalendarViewAnimatorDelegate.swift in Sources */,
 				0CDB65061B4A06D400C6820A /* CVDate.swift in Sources */,
+				0CDB65121B4F810C00C6820A /* ChapterMeeting.swift in Sources */,
 				0CE933801B14344200CD1BF4 /* Member.swift in Sources */,
 				0CE933851B16D31F00CD1BF4 /* SWRevealViewController.m in Sources */,
 			);
