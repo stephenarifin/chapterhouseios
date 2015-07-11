@@ -11,8 +11,6 @@ import UIKit
 class ChapterListViewController: UITableViewController {
     
     var chapterMeetingList: [ChapterMeeting] = []
-
-    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +20,6 @@ class ChapterListViewController: UITableViewController {
         makeGetRequests()
         self.tableView.reloadData()
         
-        // Navigation menu configuration
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
     }
 
     override func didReceiveMemoryWarning() {

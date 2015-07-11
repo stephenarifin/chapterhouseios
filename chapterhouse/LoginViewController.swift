@@ -101,7 +101,7 @@ class LoginViewController: UIViewController {
     
     func leaveLoginScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("rearViewController") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("mainTabController") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
     

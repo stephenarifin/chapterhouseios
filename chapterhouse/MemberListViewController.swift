@@ -12,8 +12,6 @@ class MemberListViewController: UITableViewController {
 
     var memberList: [Member] = []
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -45,13 +43,6 @@ class MemberListViewController: UITableViewController {
 //        menuButton.target = self.revealViewController()
 //        menuButton.action = "revealToggle:"
 //        self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            
-        }
         
         makeGetRequests()
         self.tableView.reloadData()
