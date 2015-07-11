@@ -18,6 +18,8 @@ class EventCalendarViewController: UIViewController, UITableViewDataSource, UITa
     
     @IBOutlet weak var eventTableView: UITableView!
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     // Calendar variables
     var shouldShowDaysOut = true
     var animationFinished = true
@@ -40,6 +42,13 @@ class EventCalendarViewController: UIViewController, UITableViewDataSource, UITa
         // For EventTableView
         eventTableView.delegate = self
         eventTableView.dataSource = self
+        
+        // Menu button configuration
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
     }
     
     

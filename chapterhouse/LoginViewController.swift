@@ -14,13 +14,30 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var loginPassword: UITextField!
     @IBOutlet weak var loginActivityIndicator: UIActivityIndicatorView!
     
+    
+    // When the user pushes the login button
     @IBAction func login(sender: UIButton) {
         
-        let email = "stephen.arifin@gmail.com"
-        let password = "testpassword"
+        var email: String
+        var password: String
+        
+        // For debugging purposes
+        if loginEmail.text.isEmpty && loginPassword.text.isEmpty {
+            email = "stephen.arifin@gmail.com"
+            password = "testpassword"
+        }
+        else {
+            email = loginEmail.text
+            password = loginPassword.text
+        }
+        
+        // Hides keyboard
+        UIApplication.sharedApplication().sendAction("resignFirstResponder", to:nil, from:nil, forEvent:nil)
+        
         
         loginActivityIndicator.startAnimating()
         
+        // Sends request to server
         loginPost(email, password: password)
         
     }
@@ -64,23 +81,36 @@ class LoginViewController: UIViewController {
                 println("firstNameValue: \(firstNameValue)")
             }
             
-            self.loginActivityIndicator.stopAnimating()
             
-            // Need to find a better way to do this
+            // Need to find a better way to do this...
             if cookies.count != 0 {
                 println("Leaving login screen...")
                 self.leaveLoginScreen()
             }
             
-            }).resume()
+            // Invalid login handling
+            dispatch_async(dispatch_get_main_queue()) {
+                self.loginActivityIndicator.stopAnimating()
+                self.displayInvalidLoginAlert()
+            }
+            
+        }).resume()
         
 
     }
     
     func leaveLoginScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewControllerWithIdentifier("membersList") as! UIViewController
+        let vc = storyboard.instantiateViewControllerWithIdentifier("rearViewController") as! UIViewController
         self.presentViewController(vc, animated: true, completion: nil)
+    }
+    
+    func displayInvalidLoginAlert() {
+        
+        var alert = UIAlertController(title: "Login info incorrect", message: "Please check your email or password", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+        
     }
     
     override func viewDidLoad() {
